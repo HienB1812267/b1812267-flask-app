@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index_css.css') }}">
+    <title>Iris flask webapp</title>
+</head>
+<body>
+    <div class="root">
+        <div class="header">
+            <h1 class="header__text">
+                Iris flower prediction
+            </h1>
+        </div>
+        <hr>
+        <div class="content">
+            <h2 class="content__textInput">
+                Input
+            </h2>
+            <form class="content__inputBox" method="POST" action="/predict">
+                <div class="content_inputBox-itemBox">
+                    <label for="sepalLength">Sepal Length</label>
+                    <input type="text" class="inputBox-sepalLength" required name="sepalLength" id="sepalLength" placeholder="Number between 4 and 8" min="4" max="8" step="0.1">
+                </div>
+                <div class="content_inputBox-itemBox">
+                    <label for="sepalWidth">Sepal Width</label>
+                    <input type="text" class="inputBox-sepalWidth" required name="sepalWidth" id="sepalWidth" placeholder="Number between 2 and 5" min="2" max="5" step="0.1">
+                </div>
+                <div class="content_inputBox-itemBox">
+                    <label for="petalLength">Petal Length</label>
+                    <input type="text" class="inputBox-petalLength" required name="petalLength" id="petalLength" placeholder="Number between 0 and 7" min="0" max="7" step="0.1">
+                </div>
+                <div class="content_inputBox-itemBox">
+                    <label for="petalWidth">Petal Width</label>
+                    <input type="text" class="inputBox-petalWidth" required name="petalWidth" id="petalWidth" placeholder="Number between 0 and 3" min="0" max="3" step="0.1">
+                </div>
+                <input type="submit" id="buttonSubmit" value="Analyze">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

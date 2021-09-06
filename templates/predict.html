@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='predict_css.css') }}">
+    <title>Iris flask webapp</title>
+</head>
+<body>
+    <div class="root">
+        <div class="header">
+            <h1 class="header__text">
+                Iris flower prediction
+            </h1>
+            <a class="header__buttonBack" href="{{url_for('index_process')}}">
+                <button>
+                    Go back
+                </button>
+            </a>
+        </div>
+        <hr>
+        <div class="content">
+           <h2 class="content_headerText">
+               Result
+           </h2>
+           <div class="content__result">
+               <div class="content__result-box">
+                    <h2 class="box__algorithm">
+                        Decision tree
+                    </h2>
+                    <h3 class="box__name">
+                        {{ result_dt }}
+                    </h3>
+                    {% if result_dt == "Versicolor" %}
+
+                    <img class="box_picture" src="../static/iris_versicolor.jpg">
+
+                    {% elif result_dt == "Setosa" %}
+                    <img class="box_picture" src="../static/iris_setosa.jpg">
+
+                    {% elif result_dt == "Virginica" %}
+                    <img class="box_picture" src="../static/iris_virginica.jpg">
+                    {% endif %}
+
+               </div>
+
+               <div class="content__result-box">
+                <h2 class="box__algorithm">
+                    KNN
+                </h2>
+                <h3 class="box__name">
+                    {{ result_knn }}
+                </h3>
+                {% if result_knn == "Versicolor" %}
+
+                <img class="box_picture" src="../static/iris_versicolor.jpg">
+
+                {% elif result_knn == "Setosa" %}
+                <img class="box_picture" src="../static/iris_setosa.jpg">
+
+                {% elif result_knn == "Virginica" %}
+                <img class="box_picture" src="../static/iris_virginica.jpg">
+                {% endif %}
+
+                </div>
+                <div class="content__result-box">
+                    <h2 class="box__algorithm">
+                        Bayes
+                    </h2>
+                    <h3 class="box__name">
+                        {{ result_bayes }}
+                    </h3>
+                    {% if result_bayes == "Versicolor" %}
+    
+                    <img class="box_picture" src="../static/iris_versicolor.jpg">
+    
+                    {% elif result_bayes == "Setosa" %}
+                    <img class="box_picture" src="../static/iris_setosa.jpg">
+    
+                    {% elif result_bayes == "Virginica" %}
+                    <img class="box_picture" src="../static/iris_virginica.jpg">
+                    {% endif %}
+    
+                </div>
+                <div class="content__result-box">
+                    <h2 class="box__algorithm">
+                        SVM
+                    </h2>
+                    <h3 class="box__name">
+                        {{ result_svm }}
+                    </h3>
+                    {% if result_svm == "Versicolor" %}
+    
+                    <img class="box_picture" src="../static/iris_versicolor.jpg">
+    
+                    {% elif result_svm == "Setosa" %}
+                    <img class="box_picture" src="../static/iris_setosa.jpg">
+    
+                    {% elif result_svm == "Virginica" %}
+                    <img class="box_picture" src="../static/iris_virginica.jpg">
+                    {% endif %}
+    
+                </div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>

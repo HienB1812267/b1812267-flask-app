@@ -1,0 +1,1 @@
+web: gunicorn DuongTrungHien_B1812267_app:app
